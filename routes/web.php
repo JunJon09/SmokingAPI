@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleAPIController;
-
+use App\Http\Controllers\SmokingFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api/{ido}/{keido}', [GoogleAPIController::class, 'index']);
-
+Route::get('/api/{lat}/{lng}/{zoom}', [GoogleAPIController::class, 'index']);
+Route::get('/check/{lat}/{lng}/{check}', [SmokingFormController::class, 'index']);
